@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'quote.dart'; // Absolute path
-//import 'quote.dart'; // due to same directory file relative path will work
-import 'quote_card.dart'; // Relative path
+import 'quote_card.dart';
+import 'package:lab9_1/quote.dart';
 
 void main() => runApp(MaterialApp(
   home: EchoList(),
@@ -10,46 +9,28 @@ class EchoList extends StatefulWidget {
   @override
   State<EchoList> createState() => _EchoListState();
 }
+
 class _EchoListState extends State<EchoList> {
-/*
-List<String> quotes = [
-'The truth is realy pure and never simple',
-'I see humans but no humanity',
-'The time is always right to do what is right'
-];
-// List<String> author = [];
-*/
-/* this will create error..because list is now not of string....
-List<String> quotes = [
-Quote(text: 'The truth is realy pure and never simple',author:
-'jignesh1'),
-];
-*/
+
   List<Quote> quotes = [
-    Quote(text: 'The truth is realy pure and never simple',author:
-    'ayush1'),
-    Quote(author: 'ayush2', text: 'I see humans but no humanity'),
-    Quote(text: 'The time is always right to do what is right',author:
-    'ayush3'),
+    Quote(text: 'Two things are infinite: the universe and human stupidity; and Im not sure about the universe.',author:
+    'Albert Einstein'),
+    Quote(author: 'Mahatma Gandhi', text: 'Be the change that you wish to see in the world.'),
+    Quote(text: 'Always Live In a Present Life.',author:'kashyap'),
   ];
-/*
-Widget quoteTemplate(quote){
-return QuoteCard(quote: quote,);
-}
-*/
+
   @override
+
+
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlueAccent[100],
+      backgroundColor: Colors.blueGrey,
       appBar: AppBar(
         title: Text('Quotes'),
         centerTitle: true,
-        backgroundColor: Colors.orangeAccent,
+        backgroundColor: Colors.blueAccent,
       ),
       body: Column(
-// mainAxisAlignment: MainAxisAlignment.center,
-// crossAxisAlignment: CrossAxisAlignment.center,
-// children: quotes.map((quote) => quoteTemplate(quote)).toList(),
         children: quotes.map((quote) => QuoteCard(
           quote: quote,
           delete: () {
