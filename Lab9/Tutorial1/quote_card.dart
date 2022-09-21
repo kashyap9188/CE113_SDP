@@ -1,10 +1,8 @@
-import 'package:android_dart_project/quote.dart';
 import 'package:flutter/material.dart';
-// Absolute path
+import 'package:lab9_1/quote.dart';
+
 class QuoteCard extends StatelessWidget {
-// Quote quote; // in StatelessWidget can't allowed variable ..
   final Quote quote;
-// final void Function() delete; // or you can use following code also
   final VoidCallback delete;
   QuoteCard({required this.quote,required this.delete});
   @override
@@ -20,23 +18,20 @@ class QuoteCard extends StatelessWidget {
               quote.text,
               style: TextStyle(
                 fontSize: 20,
-                color: Colors.deepPurple,
+                color: Colors.red,
               ),
             ),
             SizedBox(height: 10),
             Text(
               quote.author,
               style: TextStyle(
+
                 fontSize: 26,
-                color: Colors.deepPurple,
+                color: Colors.black,
               ),
             ),
             SizedBox(height: 8.0,),
             TextButton.icon(
-/*
-our data doesn't exist inside this stateless widget class..
-data are in 'main.dart' file. ..
-*/
               onPressed: delete,
               icon: Icon(Icons.delete),
               label: Text('Delete Quote'),
